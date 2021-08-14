@@ -13,7 +13,7 @@ if (storage === "dark") {
 boton.addEventListener('click', () => {
     //console.log('Clicked');
     let tema;
-    console.log(preferencia);
+    //console.log(preferencia);
     if (preferencia.matches) {
         document.body.classList.toggle('light');
         tema = document.body.classList.contains('light') ? 'light' : 'dark';
