@@ -1,17 +1,35 @@
 $fondo-claro: rgb(255, 255, 255);
-$fondo-oscuro: rgb(0, 0, 0);
-$color-claro: rgb(141, 141, 141);
+$fondo-oscuro: #152028;
+$color-claro: rgb(5, 5, 5);
 $color-oscuro: rgb(74, 255, 58);
+body.dark {
+    background-color: $fondo-oscuro;
+    color: #4aff3a;
+    img {
+        filter: brightness(.8) contrast(1.2);
+        font-weight: 700;
+        color: aliceblue;
+    }
+}
+
+body.light {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+
 @media (prefers-color-scheme: dark) {
-    body {
+    body.dark {
         background-color: $fondo-oscuro;
         color: $color-oscuro;
+        img {
+            filter: brightness(.8) contrast(1.2);
+        }
     }
 }
 
 @media (prefers-color-scheme: light) {
-    body {
-        background-claro: $fondo-oscuro;
+    body.light {
+        background-color: $fondo-claro;
         color: $color-claro;
     }
 }
