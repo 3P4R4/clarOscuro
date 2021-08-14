@@ -1,0 +1,17 @@
+$fondo-claro: rgb(255, 255, 255);
+$fondo-oscuro: rgb(0, 0, 0);
+$color-claro: rgb(141, 141, 141);
+$color-oscuro: rgb(74, 255, 58);
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: $fondo-oscuro;
+        color: $color-oscuro;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-claro: $fondo-oscuro;
+        color: $color-claro;
+    }
+}
