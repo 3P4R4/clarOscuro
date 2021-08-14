@@ -24,6 +24,10 @@ body.light {
         background-claro: black;
         color: #8d8d8d;
     }
+    body.dark {
+        background-color: black;
+        color: #4aff3a;
+    }
 }
 
 
