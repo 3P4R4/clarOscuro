@@ -1,28 +1,21 @@
 const boton = document.querySelector('#boton');
-
-const preferencia = window.matchMedia('(prefers-color-scheme: dark)');
-
-// Accediendo al local storage
-const storage = localStorage.getItem('tema');
-if (storage === "dark") {
-    document.body.classList.toggle('dark');
-} else if (storage === "light") {
-    document.body.classList.toggle('light');
+const configUser = window.matchMedia('(prefers-color-scheme: dark)');
+const localConfig = localStorage.getItem('tema');
+if (localConfig === 'dark') {
+    document.body.classList.toggle('dark-theme')
+} else if (localConfig === 'light') {
+    document.body.classList.toggle('light-theme')
 }
-
 boton.addEventListener('click', () => {
-    //console.log('Clicked');
-    let tema;
-    //console.log(preferencia);
-    if (preferencia.matches) {
-        document.body.classList.toggle('light');
-        tema = document.body.classList.contains('light') ? 'light' : 'dark';
+    let colorTema;
+    if (configUser.matches) {
+        // Entramos con modo oscuro
+        document.body.classList.toggle('light-theme')
+        colorTema = document.body.classList.contains('light-theme') ? 'light' : 'dark'
 
     } else {
-        document.body.classList.toggle('dark');
-        tema = document.body.classList.contains('dark') ? 'dark' : 'light';
+        document.body.classList.toggle('dark-theme')
+        colorTema = document.body.classList.contains('dark-theme') ? 'dark' : 'light'
     }
-
-    localStorage.setItem('tema', tema)
-
-});
+    localStorage.setItem('tema', colorTema)
+})

@@ -1,35 +1,35 @@
-body.dark {
-  background-color: #152028;
-  color: #4aff3a;
+body {
+    --color-bg: #ddd;
+    --color-texto: #EE6352;
 }
 
-body.dark img {
-  -webkit-filter: brightness(0.8) contrast(1.2);
-          filter: brightness(0.8) contrast(1.2);
-  font-weight: 700;
-  color: aliceblue;
+body.dark-theme {
+    --color-bg: rgb(47, 47, 47);
+    --color-texto: #ffb847;
 }
 
-body.light {
-  background-color: white;
-  color: #000000;
+body.dark-theme img {
+    filter: brightness(.8) contrast(1.2);
 }
 
 @media (prefers-color-scheme: dark) {
-  body.dark {
-    background-color: #152028;
-    color: #4aff3a;
-  }
-  body.dark img {
-    -webkit-filter: brightness(0.8) contrast(1.2);
-            filter: brightness(0.8) contrast(1.2);
-  }
+    body {
+        --color-bg: rgb(47, 47, 47);
+        --color-texto: #ffb847;
+    }
+    body.light-theme {
+        --color-bg: #ddd;
+        --color-texto: #EE6352;
+    }
+    img {
+        filter: brightness(.8) contrast(1.2);
+    }
 }
 
-@media (prefers-color-scheme: light) {
-  body.light {
-    background-color: white;
-    color: #050505;
-  }
+body {
+    background-color: var(--color-bg);
 }
-/*# sourceMappingURL=style.css.map */
+
+h1 {
+    color: var(--color-texto);
+}
