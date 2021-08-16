@@ -1,30 +1,77 @@
-    $fondo-claro: rgb(255, 255, 255);
-    $fondo-oscuro: #152028;
-    $color-claro: rgb(5, 5, 5);
-    $color-oscuro: rgb(74, 255, 58);
-    body.dark {
-        background-color: $fondo-oscuro;
-        color: $color-oscuro;
-    }
-    
-    body.light {
-        background-color: $fondo-claro;
-        color: $color-claro;
-    }
-    
-    @media (prefers-color-scheme: dark) {
-        body.dark {
-            background-color: $fondo-oscuro;
-            color: $color-oscuro;
-            img {
-                filter: brightness(.8) contrast(1.2);
-            }
+$texto-claro: rgb(0, 0, 0);
+$texto-oscuro: rgb(114, 246, 38);
+$enlace-claro: rgb(5, 112, 253);
+$enlace-oscuro: rgb(207, 29, 252);
+$fondo-claro: rgb(255, 255, 255);
+$fondo-oscuro: rgb(0, 0, 0);
+
+/* body {
+    --color-bg: #ddd;
+    --color-texto: #EE6352;
+}
+ */
+
+
+/* body.dark-theme {
+    --color-bg: $fondo-oscuro;
+    --color-texto: $texto-oscuro;
+} */
+
+
+/* body.dark-theme img {
+    filter: brightness(.8) contrast(1.2);
+} */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --color-bg: rgb(36, 46, 65);
+        --color-texto: #ffb847;
+        color: $texto-oscuro;
+        .contenedor-fila-enlace {
+            color: $enlace-oscuro;
+            font-weight: 900;
+        }
+        .contenedor-fila-parrot {
+            filter: brightness(.8) contrast(1.2);
+            width: 400px;
+            height: 400px;
+            object-fit: none;
         }
     }
-    
-    @media (prefers-color-scheme: light) {
-        body.light {
-            background-color: $fondo-claro;
-            color: $color-claro;
+    body.light-theme {
+        --color-bg: $fondo-claro;
+        --color-texto: $texto-claro;
+        color: $texto-claro;
+        .contenedor-fila-enlace {
+            color: $enlace-claro;
+            font-weight: 100;
+        }
+        .contenedor-fila-parrot {
+            filter: brightness(1.3) contrast(1);
+            width: 400px;
+            height: 400px;
+            object-fit: none;
         }
     }
+}
+
+body {
+    background-color: var(--color-bg);
+}
+
+h1 {
+    color: var(--color-texto);
+}
+
+p {
+    column-count: 2;
+}
+
+.contenedor {
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

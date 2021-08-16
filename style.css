@@ -1,35 +1,77 @@
-body {
+/* body {
     --color-bg: #ddd;
     --color-texto: #EE6352;
 }
-
-body.dark-theme {
-    --color-bg: rgb(47, 47, 47);
-    --color-texto: #ffb847;
-}
-
-body.dark-theme img {
+ */
+/* body.dark-theme {
+    --color-bg: $fondo-oscuro;
+    --color-texto: $texto-oscuro;
+} */
+/* body.dark-theme img {
     filter: brightness(.8) contrast(1.2);
-}
-
+} */
 @media (prefers-color-scheme: dark) {
-    body {
-        --color-bg: rgb(47, 47, 47);
-        --color-texto: #ffb847;
-    }
-    body.light-theme {
-        --color-bg: #ddd;
-        --color-texto: #EE6352;
-    }
-    img {
-        filter: brightness(.8) contrast(1.2);
-    }
+  body {
+    --color-bg: rgb(36, 46, 65);
+    --color-texto: #ffb847;
+    color: #72f626;
+  }
+  body .contenedor-fila-enlace {
+    color: #cf1dfc;
+    font-weight: 900;
+  }
+  body .contenedor-fila-parrot {
+    -webkit-filter: brightness(0.8) contrast(1.2);
+            filter: brightness(0.8) contrast(1.2);
+    width: 400px;
+    height: 400px;
+    -o-object-fit: none;
+       object-fit: none;
+  }
+  body.light-theme {
+    --color-bg: $fondo-claro;
+    --color-texto: $texto-claro;
+    color: black;
+  }
+  body.light-theme .contenedor-fila-enlace {
+    color: #0570fd;
+    font-weight: 100;
+  }
+  body.light-theme .contenedor-fila-parrot {
+    -webkit-filter: brightness(1.3) contrast(1);
+            filter: brightness(1.3) contrast(1);
+    width: 400px;
+    height: 400px;
+    -o-object-fit: none;
+       object-fit: none;
+  }
 }
 
 body {
-    background-color: var(--color-bg);
+  background-color: var(--color-bg);
 }
 
 h1 {
-    color: var(--color-texto);
+  color: var(--color-texto);
 }
+
+p {
+  -webkit-column-count: 2;
+          column-count: 2;
+}
+
+.contenedor {
+  width: 800px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+/*# sourceMappingURL=style.css.map */
