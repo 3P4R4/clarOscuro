@@ -3,31 +3,53 @@ $texto-oscuro: rgb(114, 246, 38);
 $enlace-claro: rgb(5, 112, 253);
 $enlace-oscuro: rgb(207, 29, 252);
 $fondo-claro: rgb(255, 255, 255);
-$fondo-oscuro: rgb(0, 0, 0);
-
-/* body {
-    --color-bg: #ddd;
-    --color-texto: #EE6352;
+$fondo-oscuro: rgb(36, 46, 65);
+$h1-oscuro: rgb(250, 143, 3);
+$h1-claro: rgb(222, 96, 245);
+body.dark-theme {
+    background-color: $fondo-oscuro;
+    color: $texto-oscuro;
+    a {
+        color: $enlace-oscuro;
+        font-weight: 900;
+    }
+    h1 {
+        color: $h1-oscuro;
+    }
 }
- */
 
+body.dark-theme img {
+    -webkit-filter: brightness(0.8) contrast(1.2);
+    filter: brightness(0.8) contrast(1.2);
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
 
-/* body.dark-theme {
-    --color-bg: $fondo-oscuro;
-    --color-texto: $texto-oscuro;
-} */
-
-
-/* body.dark-theme img {
-    filter: brightness(.8) contrast(1.2);
-} */
+body {
+    background-color: $fondo-claro;
+    color: $texto-claro;
+    .contenedor-fila-enlace {
+        color: $enlace-claro;
+        font-weight: 100;
+    }
+    .contenedor-fila-parrot {
+        filter: brightness(1.3) contrast(1);
+        width: 400px;
+        height: 400px;
+        object-fit: none;
+    }
+    h1 {
+        color: $h1-claro;
+    }
+}
 
 @media (prefers-color-scheme: dark) {
     body {
-        --color-bg: rgb(36, 46, 65);
-        --color-texto: #ffb847;
+        background-color: rgb(36, 46, 65);
+        color: #ffb847;
         color: $texto-oscuro;
-        .contenedor-fila-enlace {
+        a.contenedor-fila-enlace {
             color: $enlace-oscuro;
             font-weight: 900;
         }
@@ -39,8 +61,7 @@ $fondo-oscuro: rgb(0, 0, 0);
         }
     }
     body.light-theme {
-        --color-bg: $fondo-claro;
-        --color-texto: $texto-claro;
+        background-color: $fondo-claro;
         color: $texto-claro;
         .contenedor-fila-enlace {
             color: $enlace-claro;
@@ -55,16 +76,9 @@ $fondo-oscuro: rgb(0, 0, 0);
     }
 }
 
-body {
-    background-color: var(--color-bg);
-}
-
-h1 {
-    color: var(--color-texto);
-}
-
 p {
     column-count: 2;
+    font-size: 22px;
 }
 
 .contenedor {
