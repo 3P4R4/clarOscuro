@@ -1,4 +1,4 @@
-const boton = document.querySelector('#boton');
+/* const boton = document.querySelector('#boton');
 const configUser = window.matchMedia('(prefers-color-scheme: dark)');
 const localConfig = localStorage.getItem('tema');
 if (localConfig === 'dark') {
@@ -18,4 +18,30 @@ boton.addEventListener('click', () => {
         colorTema = document.body.classList.contains('dark-theme') ? 'dark' : 'light'
     }
     localStorage.setItem('tema', colorTema)
+}) */
+
+
+document.querySelector(".container").addEventListener("click", () => {
+    document.querySelector(".sol-logo").classList.toggle("animar-sol");
+    document.querySelector(".luna-logo").classList.toggle("animar-luna");
+    //document.querySelector("body").classList.toggle("oscuro");
+    let colorTema;
+    if (configUser.matches) {
+        // Entramos con modo oscuro
+        document.body.classList.toggle('light-theme');
+        colorTema = document.body.classList.contains('light-theme') ? 'light' : 'dark'
+
+    } else {
+        document.body.classList.toggle('dark-theme');
+        colorTema = document.body.classList.contains('dark-theme') ? 'dark' : 'light'
+    }
+    localStorage.setItem('tema', colorTema)
+
 })
+const configUser = window.matchMedia('(prefers-color-scheme: dark)');
+const localConfig = localStorage.getItem('tema');
+if (localConfig === 'dark') {
+    document.body.classList.toggle('dark-theme');
+} else if (localConfig === 'light') {
+    document.body.classList.toggle('light-theme');
+}

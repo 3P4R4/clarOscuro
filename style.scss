@@ -13,6 +13,9 @@ body.dark-theme {
         color: $enlace-oscuro;
         font-weight: 900;
     }
+    .sol {
+        color: white;
+    }
     h1 {
         color: $h1-oscuro;
     }
@@ -38,6 +41,9 @@ body {
         width: 400px;
         height: 400px;
         object-fit: none;
+    }
+    .luna {
+        color: black;
     }
     h1 {
         color: $h1-claro;
@@ -88,4 +94,61 @@ p {
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+
+/*Agregados*/
+
+body {
+    transition: background-color 1s;
+}
+
+
+/* .oscuro {
+    background-color: black;
+} */
+
+.container {
+    position: relative;
+}
+
+.sol {
+    font-size: 5rem;
+    width: fit-content;
+    height: fit-content;
+}
+
+.luna {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: -70px;
+}
+
+svg.svg-inline--fa.fa-moon.fa-w-16 {
+    width: 50px;
+    height: 50px;
+}
+
+.luna-logo {
+    opacity: 0;
+    transform: translateY(20%) rotateZ(50deg);
+    transition: all 1s ease-out;
+}
+
+.sol-logo {
+    opacity: 1;
+    transform: translateY(0) rotateZ(0deg);
+    transition: all 1s ease-out;
+}
+
+.animar-sol {
+    opacity: 0;
+    transform: translateY(20%) rotateZ(100deg);
+    color: aliceblue;
+}
+
+.animar-luna {
+    opacity: 1;
+    transform: translateY(0%) rotateZ(0deg);
+    color: aliceblue;
 }

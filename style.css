@@ -8,6 +8,10 @@ body.dark-theme a {
   font-weight: 900;
 }
 
+body.dark-theme .sol {
+  color: white;
+}
+
 body.dark-theme h1 {
   color: #fa8f03;
 }
@@ -38,6 +42,10 @@ body .contenedor-fila-parrot {
   height: 400px;
   -o-object-fit: none;
      object-fit: none;
+}
+
+body .luna {
+  color: black;
 }
 
 body h1 {
@@ -99,5 +107,69 @@ p {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
+}
+
+/*Agregados*/
+body {
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
+}
+
+/* .oscuro {
+    background-color: black;
+} */
+.container {
+  position: relative;
+}
+
+.sol {
+  font-size: 5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.luna {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: -70px;
+}
+
+svg.svg-inline--fa.fa-moon.fa-w-16 {
+  width: 50px;
+  height: 50px;
+}
+
+.luna-logo {
+  opacity: 0;
+  -webkit-transform: translateY(20%) rotateZ(50deg);
+          transform: translateY(20%) rotateZ(50deg);
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.sol-logo {
+  opacity: 1;
+  -webkit-transform: translateY(0) rotateZ(0deg);
+          transform: translateY(0) rotateZ(0deg);
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.animar-sol {
+  opacity: 0;
+  -webkit-transform: translateY(20%) rotateZ(100deg);
+          transform: translateY(20%) rotateZ(100deg);
+  color: aliceblue;
+}
+
+.animar-luna {
+  opacity: 1;
+  -webkit-transform: translateY(0%) rotateZ(0deg);
+          transform: translateY(0%) rotateZ(0deg);
+  color: aliceblue;
 }
 /*# sourceMappingURL=style.css.map */
